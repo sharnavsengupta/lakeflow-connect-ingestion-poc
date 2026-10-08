@@ -1,18 +1,5 @@
 # Cost Implications: Metadata-Driven Ingestion with Lakeflow Connect vs. Traditional RDS-Based Approach
 
-## Executive Summary
-
-For Cuscal's enterprise data ingestion needs (500+ tables across 20 source systems), adopting a **metadata-driven approach with Lakeflow Connect** delivers **$485K in annual ingestion cost savings** compared to traditional metadata maintenance in RDS.
-
-| Metric | Traditional (RDS-Based) | Metadata-Driven (Lakeflow Connect) | **Savings** |
-|---|---|---|---|
-| **Annual Ingestion Cost** | $587,500 | $102,500 | **$485,000 (83% reduction)** |
-| **Cost per Table** | $1,175 | $205 | **$970 per table** |
-| **Implementation Time** | N/A (existing) | 8 weeks | - |
-| **Payback Period** | - | **2.5 months** | - |
-
----
-
 ## Detailed Cost Comparison
 
 ### Traditional Approach: RDS-Based Metadata + Custom ETL
@@ -82,7 +69,7 @@ For Cuscal's enterprise data ingestion needs (500+ tables across 20 source syste
 
 ### When Accounting for Maintenance Only
 
-The document requested focuses on **ingestion cost only**. The major traditional cost is **custom script maintenance** ($600K), which is eliminated in metadata-driven approach:
+The major traditional cost is custom script maintenance ($600K), which is eliminated in the metadata-driven approach:
 
 | Cost Category | Traditional | Metadata-Driven | Savings |
 |---|---|---|---|
@@ -92,27 +79,6 @@ The document requested focuses on **ingestion cost only**. The major traditional
 | **Script maintenance** | **$600,000** | **$15,600** | **$584,400** |
 | Monitoring, support, misc. | $97,500 | $5,000 | $92,500 |
 | **TOTAL** | **$991,500** | **$26,600** | **$964,900** |
-
----
-
-## ROI & Payback Period
-
-**Implementation Cost:**
-- Framework development: $60,000 (4 weeks)
-- POC with 3 sources: $15,000 (2 weeks)
-- **Total:** $75,000
-
-**Annual Savings:** $964,900
-
-**Payback Period:** 75,000 ÷ 964,900 = **0.93 months (~4 weeks)**
-
-**Year 1 ROI:**
-- Savings: $964,900
-- Implementation: $75,000
-- **Net benefit: $889,900**
-- **ROI: 1,186%**
-
-**5-Year Savings:** $964,900 × 5 = **$4,824,500**
 
 ---
 
@@ -160,22 +126,4 @@ The document requested focuses on **ingestion cost only**. The major traditional
 
 **Proceed with metadata-driven ingestion using Lakeflow Connect.**
 
-**Business Justification:**
-1. **Near-immediate ROI** - Payback in less than 1 month
-2. **Massive cost reduction** - 97% reduction in per-table ingestion cost
-3. **Operational efficiency** - 83x faster processing
-4. **Scalability** - Add tables without proportional cost increase
-5. **No vendor lock-in** - Built on Databricks, GitHub, open standards
-
----
-
-## Next Steps
-
-1. **Approve $75K POC investment** (4-week pilot)
-   - Demonstrate 3 source systems (SQL Server, Oracle, Files)
-   - Validate cost assumptions
-
-2. **Full rollout** (post-POC)
-   - Migrate existing ingestion to framework
-   - Realize full $964K annual savings
-
+The core financial case is straightforward: the metadata-driven approach materially reduces ingestion cost by eliminating one-off script maintenance, reducing compute time, and removing the overhead of a traditional custom ingestion stack.
