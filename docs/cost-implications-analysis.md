@@ -1,4 +1,4 @@
-# Cost Implications: Metadata-Driven Ingestion with Lakeflow Connect vs. Traditional RDS-Based Approach
+# Cost Implications: Metadata-Driven Ingestion with Lakeflow Connect vs. Traditional Approach
 
 ## Detailed Cost Comparison
 
