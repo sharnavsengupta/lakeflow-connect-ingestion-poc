@@ -1,17 +1,5 @@
 # Metadata-Driven Ingestion Architecture for Enterprise Scale
 
-## Executive Summary
-
-For enterprise platforms like Cuscal, the ingestion framework is **not built around individual tables**. Instead, it is built around **metadata-driven onboarding**.
-
-**The core principle:**
-
-> "How do we onboard the 101st table without writing new code?"
-
-This is where **Lakeflow Connect + metadata + DAB** becomes powerful.
-
----
-
 ## The Problem: Traditional Approach (Doesn't Scale)
 
 ### Scenario: Enterprise Data Integration
