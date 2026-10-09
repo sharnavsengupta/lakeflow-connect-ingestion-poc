@@ -56,6 +56,31 @@
 
 ---
 
+## DBU Consumption per Ingestion Run
+
+For planning purposes, the metadata-driven Lakeflow approach is a single, parallelized daily run rather than a large number of custom jobs.
+
+### Assumptions
+- 500 tables processed in one scheduled ingestion run
+- Run duration: approximately 1 hour
+- Cluster size: 4-node all-purpose cluster for parallel ingestion
+- Standard Databricks DBU consumption: approximately 4 DBUs per hour for this cluster profile
+
+### Estimated DBU Use
+
+DBU consumed per run = cluster DBU rate × runtime
+
+- 4 DBUs/hour × 1 hour = **4 DBUs per ingestion run**
+
+### Practical View
+- **Per day:** ~4 DBUs/day
+- **Per month (30 days):** ~120 DBUs/month
+- **Per year (365 days):** ~1,460 DBUs/year
+
+This is materially lower than operating a large number of custom ETL jobs in EC2 because the metadata-driven Lakeflow model executes the workload concurrently in one orchestrated run and removes repeated idle compute and retry overhead.
+
+---
+
 ## Cost Savings Analysis
 
 ### Direct Ingestion Cost Savings
