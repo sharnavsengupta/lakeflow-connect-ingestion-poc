@@ -55,6 +55,26 @@ The framework **reads configuration** and **dynamically decides** what to ingest
 
 ### High-Level Architecture
 
+# ADR-001: Metadata-Driven Architecture
+
+## Status
+Accepted
+
+## Summary
+
+ToolVault treats tool definitions as data instead of code. Each tool is described in metadata, and the user interface is generated from that metadata at runtime. This allows new tools to be added without creating custom UI code for every tool.
+
+```mermaid
+flowchart LR
+    A[Tool contributor] --> B[Indexing process]
+    B --> C[index.json metadata]
+    C --> D[ToolVault app]
+    D --> E[Dynamic UI generation]
+    E --> F[Tool execution]
+    F --> G[Results / output]
+
+    H[Optional notebook guidance] -. supports complex tools .-> E
+
 ```mermaid
 flowchart TD
     A[Metadata Configuration Table] --> B[Framework Controller]
